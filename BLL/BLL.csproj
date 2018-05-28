@@ -30,8 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,14 +55,30 @@
     <Compile Include="Entities\SubCategory.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\UserGroup.cs" />
+    <Compile Include="Infrastructure\Exception\ValidationException.cs" />
+    <Compile Include="Infrastructure\MapperConfig.cs" />
+    <Compile Include="Infrastructure\ServiceModule.cs" />
     <Compile Include="Interfaces\IMainCategoryManager.cs" />
     <Compile Include="Interfaces\IProductManager.cs" />
     <Compile Include="Interfaces\ISubCategoryManager.cs" />
     <Compile Include="Interfaces\IUserGroupManager.cs" />
     <Compile Include="Interfaces\IUserManager.cs" />
+    <Compile Include="Manager\MainCategoryManager.cs" />
+    <Compile Include="Manager\ProductManager.cs" />
+    <Compile Include="Manager\SubCategoryManager.cs" />
+    <Compile Include="Manager\UserGroupManager.cs" />
+    <Compile Include="Manager\UserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{7d87de81-201b-43cb-b45f-9730192461bc}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
