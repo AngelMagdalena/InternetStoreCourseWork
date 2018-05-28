@@ -46,8 +46,14 @@
     <Compile Include="Entities\SubCategory.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\UserGroup.cs" />
+    <Compile Include="Interfaces\IMainCategoryManager.cs" />
+    <Compile Include="Interfaces\IProductManager.cs" />
+    <Compile Include="Interfaces\ISubCategoryManager.cs" />
+    <Compile Include="Interfaces\IUserGroupManager.cs" />
+    <Compile Include="Interfaces\IUserManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
